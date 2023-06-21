@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import Topbar from "./Components/TopBar";
+import GenerateResult from "./Components/GenerateResult";
 
 function App() {
+  const [font, setFont] = useState("sans");
+
+  const handleFont = (event) => {
+    setFont(event.target.value);
+  };
+
+  const [mode, setMode] = useState(false);
+
+  const handleMode = (event) => {
+    setMode(event.target.checked);
+  };
+
+  // const fontStyle =
+  //   font === "serif"
+  //     ? "serif"
+  //     : font === "lora"
+  //     ? "lora"
+  //     : font === "inconsolata"
+  //     ? "inconsolata"
+  //     : "";
+  // fontStyle.font += "app";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Topbar
+        font={font}
+        handleFont={handleFont}
+        mode={mode}
+        handleMode={handleMode}
+      />
+      <GenerateResult />
     </div>
   );
 }
