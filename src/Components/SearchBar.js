@@ -18,7 +18,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <FormControl sx={{ m: 0, width: "100ch" }} variant="filled">
+    <FormControl sx={{ width: "100%" }} variant="filled">
       <FilledInput
         id="filled-adornment"
         type="text"

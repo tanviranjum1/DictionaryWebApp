@@ -24,8 +24,8 @@ const Topbar = ({ font, handleFont, mode, handleMode }) => {
             IconComponent={() => <Window />}
           >
             <MenuItem value={"sans"}>Sans Serif</MenuItem>
-            <MenuItem value={"inter"}>Inter</MenuItem>
-            <MenuItem value={"rob"}>Roberta</MenuItem>
+            <MenuItem value={"serif"}>Serif</MenuItem>
+            <MenuItem value={"mono"}>Mono</MenuItem>
           </Select>
         </FormControl>
         <Switch

@@ -16,18 +16,8 @@ function App() {
     setMode(event.target.checked);
   };
 
-  // const fontStyle =
-  //   font === "serif"
-  //     ? "serif"
-  //     : font === "lora"
-  //     ? "lora"
-  //     : font === "inconsolata"
-  //     ? "inconsolata"
-  //     : "";
-  // fontStyle.font += "app";
-
   return (
-    <div className="app">
+    <div className={`${font} app`}>
       <Topbar
         font={font}
         handleFont={handleFont}

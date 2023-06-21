@@ -3,12 +3,12 @@
   margin: auto;
 }
 
-.serif {
+.sans {
   font-family: "Inter", sans-serif;
 }
-.lora {
+.serif {
   font-family: "Lora", serif;
 }
-.inconsolata {
+.mono {
   font-family: "Inconsolata", monospace;
 }

@@ -7,38 +7,37 @@ const DisplayResult = ({ results }) => {
       {results.map((result, index) => (
         <div key={index}>
           <h1>{result.word}</h1>
-          <p>{result.phonetic}</p>
-          <div>Phonetics:</div>
-          <ul>
-            {result.phonetics.map((phonetic, index) => (
-              <li key={index}>
-                {phonetic.text}
-                {phonetic.audio && (
+          {result.phonetics.map((phonetic, index) => (
+            <div key={index}>
+              {phonetic.audio && (
+                <>
+                  <p>{phonetic.text}</p>
                   <audio controls>
                     <source src={phonetic.audio} type="audio/mpeg" />
                   </audio>
-                )}
-              </li>
-            ))}
-          </ul>
-          <div>Origin: {result.origin}</div>
-          <div>Meanings:</div>
-          <ul>
-            {result.meanings.map((meaning, index) => (
-              <li key={index}>
-                <div>Part of Speech: {meaning.partOfSpeech}</div>
-                <div>Definitions:</div>
-                <ul>
-                  {meaning.definitions.map((definition, index) => (
-                    <li key={index}>
-                      <div>Definition: {definition.definition}</div>
-                      <div>Example: {definition.example}</div>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+                </>
+              )}
+            </div>
+          ))}
+          {result.meanings.map((meaning, index) => (
+            <div key={index}>
+              <h1>{meaning.partOfSpeech}</h1>
+              <h2>Meaning</h2>
+              <ul>
+                {meaning.definitions.map((definition, index) => (
+                  <li key={index}>
+                    <p>{definition.definition && definition.definition}</p>
+                    <p>{definition.example && definition.example}</p>
+                  </li>
+                ))}
+              </ul>
+              {meaning.synonyms.length > 0 && (
+                <h3>
+                  Synonyms {meaning.synonyms.map((synonym, index) => synonym)}
+                </h3>
+              )}
+            </div>
+          ))}
         </div>
       ))}
     </>
